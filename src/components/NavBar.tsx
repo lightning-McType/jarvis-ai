@@ -1,6 +1,5 @@
 "use client";
 
-import WordMark from "@/components/WordMark";
 import { Content, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
@@ -9,6 +8,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 import { useState } from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import JarvisComponent from "./JarvisComponent";
 
 type NavBarProps = {
   settings: Content.SettingsDocument;
@@ -20,9 +20,10 @@ const NavBar = ({ settings }: NavBarProps) => {
   return (
     <nav className="px-4 py-4 md:px-6 md:py-6" aria-label="Main">
       <div className="mx-auto flex max-w-6xl flex-col justify-between py-2 font-medium text-white md:flex-row md:items-center">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-start">
           <Link href="/" className="z-50" onClick={() => setOpen(false)}>
-            <WordMark />
+            {/* <WordMark /> */}
+            <JarvisComponent />
             <span className="sr-only">Jarvis.ai home page</span>
           </Link>
           <button
